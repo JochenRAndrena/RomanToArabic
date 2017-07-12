@@ -5,7 +5,7 @@ namespace RomanToArabic
 {
     public class Converter
     {
-        private Dictionary<string, int> _romanDigits;
+        private readonly Dictionary<string, int> _romanDigits;
 
         public Converter()
         {
