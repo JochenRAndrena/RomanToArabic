@@ -31,12 +31,18 @@ namespace RomanToArabic
             {
                 return new List<string>();
             }
+            var matchingToken = FindLongestPrefixInTokenList(s);
+            return new List<string> {matchingToken}.Concat(TokenizeRemainingString(s, matchingToken)).ToList();
+        }
+
+        private string FindLongestPrefixInTokenList(string s)
+        {
             var matchingTokens = ComputeMatchingTokens(s);
             if (!matchingTokens.HasUniqueLongestElement())
                 throw new ArgumentException("can not tokenize " + s);
 
             var longestMatch = matchingTokens.GetLongestElement();
-            return new List<string> {longestMatch}.Concat(TokenizeRemainingString(s, longestMatch)).ToList();
+            return longestMatch;
         }
 
         private List<string> TokenizeRemainingString(string s, string longestMatchingToken)
