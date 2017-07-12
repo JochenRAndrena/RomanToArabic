@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/RomanToArabic/v14
+/RomanToArabic/bin/Debug
+/RomanToArabic/obj/Debug
+/RomanToArabicTest/bin/Debug
+/RomanToArabicTest/obj/Debug
+/packages/NUnit.3.5.0
