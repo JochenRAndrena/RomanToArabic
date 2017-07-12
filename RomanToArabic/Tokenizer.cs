@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using RomanToArabic.Extensions;
 
 namespace RomanToArabic
 {
@@ -23,11 +24,11 @@ namespace RomanToArabic
                     return new List<string>();
                 }
                 var matchingTokens = ComputeMatchingTokens(s);
-                var longestMatch = ComputeLongestMatchingToken(matchingTokens);
+                var longestMatch = matchingTokens.GetLongestElement();
 
                 return new List<string> {longestMatch}.Concat(TokenizeRemainingString(s, longestMatch)).ToList();
             }
-            catch (Exception )
+            catch (Exception)
             {
                 throw new ArgumentException("can not tokenize " + s);
             }
@@ -50,25 +51,6 @@ namespace RomanToArabic
                 }
             }
             return matchingTokens;
-        }
-
-        private string ComputeLongestMatchingToken(List<string> tokens)
-        {
-            var maxLength = 0;
-            var longestTokens = new List<string>();
-            tokens.ForEach(token =>
-            {
-                if (token.Length > maxLength)
-                {
-                    maxLength = token.Length;
-                    longestTokens = new List<string> {token};
-                }
-                else if (token.Length == maxLength)
-                {
-                    longestTokens.Add(token);
-                }
-            });
-            return longestTokens.Single();
         }
     }
 }
