@@ -12,5 +12,12 @@ namespace RomanToArabicTest
             var converter = new Converter();
             Assert.That(converter.Convert("I"), Is.EqualTo(1));
         }
+
+        [Test]
+        public void Converter_ConvertII_Returns2()
+        {
+            var converter = new Converter();
+            Assert.That(converter.Convert("II"), Is.EqualTo(2));
+        }
     }
 }
