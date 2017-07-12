@@ -61,5 +61,29 @@ namespace RomanToArabicTest
         {
             Assert.That(_converter.Convert("X"), Is.EqualTo(10));
         }
+
+        [Test]
+        public void Converter_ConvertXXIV_Returns24()
+        {
+            Assert.That(_converter.Convert("XXIV"), Is.EqualTo(24));
+        }
+
+        [Test]
+        public void Converter_ConvertXL_Returns40()
+        {
+            Assert.That(_converter.Convert("XL"), Is.EqualTo(40));
+        }
+
+        [Test]
+        public void Converter_ConvertXLII_Returns42()
+        {
+            Assert.That(_converter.Convert("XLII"), Is.EqualTo(42));
+        }
+
+        [Test]
+        public void Converter_ConvertL_Returns9()
+        {
+            Assert.That(_converter.Convert("L"), Is.EqualTo(50));
+        }
     }
 }
