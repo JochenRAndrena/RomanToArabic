@@ -38,5 +38,13 @@ namespace RomanToArabicTest
             Assert.That(tokens.Count, Is.EqualTo(1));
             Assert.That(tokens.Contains("IV"));
         }
+
+        [Test]
+        public void TokenizerWithPossibleTokensIAndIVAndV_TokenizeV_ReturnsListContainingOneElementV()
+        {
+            var tokens = _tokenizer.Tokenize("V");
+            Assert.That(tokens.Count, Is.EqualTo(1));
+            Assert.That(tokens.Contains("V"));
+        }
     }
 }

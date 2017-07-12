@@ -44,7 +44,6 @@ namespace RomanToArabicTest
             Assert.That(_converter.Convert("V"), Is.EqualTo(5));
         }
 
-        [Ignore("need helper class first")]
         [Test]
         public void Converter_ConvertVI_Returns6()
         {

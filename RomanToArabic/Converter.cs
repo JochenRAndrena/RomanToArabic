@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Xml;
 
@@ -21,9 +22,12 @@ namespace RomanToArabic
 
         public int Convert(string romanNumber)
         {
-            if (_romanDigits.ContainsKey(romanNumber))
-                return _romanDigits[romanNumber];
-            return romanNumber.Length;
+            var tokenizer = new Tokenizer(_romanDigits.Keys.ToList());
+            var tokens = tokenizer.Tokenize(romanNumber);
+
+            var arabicNumber = 0;
+            tokens.ForEach(token => arabicNumber+= _romanDigits[token]);
+            return arabicNumber;
         }
 
     }
