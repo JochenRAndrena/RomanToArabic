@@ -5,11 +5,11 @@ namespace RomanToArabic
 {
     public class Converter
     {
-        private Dictionary<string, int> _tokens;
+        private Dictionary<string, int> _romanDigits;
 
         public Converter()
         {
-            _tokens = new Dictionary<string, int>
+            _romanDigits = new Dictionary<string, int>
             {
                 {"I", 1},
                 {"IV", 4},
@@ -18,11 +18,11 @@ namespace RomanToArabic
         }
 
 
-        public int Convert(string s)
+        public int Convert(string romanNumber)
         {
-            if (_tokens.ContainsKey(s))
-                return _tokens[s];
-            return s.Length;
+            if (_romanDigits.ContainsKey(romanNumber))
+                return _romanDigits[romanNumber];
+            return romanNumber.Length;
         }
     }
 }
