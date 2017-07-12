@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace RomanToArabic.Extensions
@@ -8,7 +7,12 @@ namespace RomanToArabic.Extensions
     {
         public static string GetLongestElement(this List<string> list)
         {
-            return GetLongestElements(list).Single(); ;
+            return GetLongestElements(list).Single();
+        }
+
+        public static bool HasUniqueLongestElement(this List<string> list)
+        {
+            return GetLongestElements(list).Count == 1;
         }
 
         public static List<string> GetLongestElements(this List<string> list)

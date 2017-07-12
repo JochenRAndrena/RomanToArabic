@@ -7,31 +7,31 @@ namespace RomanToArabic
 {
     public class Tokenizer
     {
-        private List<string> _tokens;
+        private readonly List<string> _tokens;
 
         public Tokenizer(List<string> tokens)
         {
-            this._tokens = tokens;
+            _tokens = tokens;
+        }
+
+        private List<string> Tokens
+        {
+            get { return _tokens; }
         }
 
 
         public List<string> Tokenize(string s)
         {
-            try
+            if (s.Length == 0)
             {
-                if (s.Length == 0)
-                {
-                    return new List<string>();
-                }
-                var matchingTokens = ComputeMatchingTokens(s);
-                var longestMatch = matchingTokens.GetLongestElement();
-
-                return new List<string> {longestMatch}.Concat(TokenizeRemainingString(s, longestMatch)).ToList();
+                return new List<string>();
             }
-            catch (Exception)
-            {
+            var matchingTokens = ComputeMatchingTokens(s);
+            if (!matchingTokens.HasUniqueLongestElement())
                 throw new ArgumentException("can not tokenize " + s);
-            }
+
+            var longestMatch = matchingTokens.GetLongestElement();
+            return new List<string> {longestMatch}.Concat(TokenizeRemainingString(s, longestMatch)).ToList();
         }
 
         private List<string> TokenizeRemainingString(string s, string longestMatchingToken)
@@ -43,7 +43,7 @@ namespace RomanToArabic
         {
             var matchingTokens = new List<string>();
 
-            foreach (var token in _tokens)
+            foreach (var token in Tokens)
             {
                 if (s.StartsWith(token))
                 {
