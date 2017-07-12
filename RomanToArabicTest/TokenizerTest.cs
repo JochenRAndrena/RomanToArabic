@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
+using RomanToArabic;
 
 namespace RomanToArabicTest
 {
@@ -28,6 +29,14 @@ namespace RomanToArabicTest
             var tokens = _tokenizer.Tokenize("II");
             Assert.That(tokens.Count, Is.EqualTo(2));
             Assert.That(tokens.Contains("I"));
+        }
+
+        [Test]
+        public void TokenizerWithPossibleTokensIAndIV_TokenizeIV_ReturnsListContainingOneElementIV()
+        {
+            var tokens = _tokenizer.Tokenize("IV");
+            Assert.That(tokens.Count, Is.EqualTo(1));
+            Assert.That(tokens.Contains("IV"));
         }
     }
 }
