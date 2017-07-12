@@ -14,6 +14,11 @@ namespace RomanToArabic
             _tokens = tokens;
         }
 
+        public Tokenizer(params string[] tokens)
+        {
+            _tokens = tokens.ToList();
+        }
+
         private List<string> Tokens
         {
             get { return _tokens; }

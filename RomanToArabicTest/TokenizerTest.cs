@@ -12,8 +12,7 @@ namespace RomanToArabicTest
         [SetUp]
         public void Setup()
         {
-            var possibleTokens = new List<string> {"I", "IV", "V"};
-            _tokenizer = new Tokenizer(possibleTokens);
+            _tokenizer = new Tokenizer("I", "IV", "V");
         }
         [Test]
         public void TokenizerWithPossibleTokensIAndIVAndV_TokenizeI_ReturnsListContainingOneElementI()
