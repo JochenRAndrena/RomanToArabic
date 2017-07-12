@@ -37,5 +37,11 @@ namespace RomanToArabicTest
         {
             Assert.That(_converter.Convert("IV"), Is.EqualTo(4));
         }
+
+        [Test]
+        public void Converter_ConvertV_Returns5()
+        {
+            Assert.That(_converter.Convert("V"), Is.EqualTo(5));
+        }
     }
 }
