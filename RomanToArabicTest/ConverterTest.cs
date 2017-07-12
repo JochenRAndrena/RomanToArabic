@@ -85,5 +85,47 @@ namespace RomanToArabicTest
         {
             Assert.That(_converter.Convert("L"), Is.EqualTo(50));
         }
+
+        [Test]
+        public void Converter_ConvertXC_Returns90()
+        {
+            Assert.That(_converter.Convert("XC"), Is.EqualTo(90));
+        }
+
+        [Test]
+        public void Converter_ConvertC_Returns100()
+        {
+            Assert.That(_converter.Convert("C"), Is.EqualTo(100));
+        }
+
+        [Test]
+        public void Converter_ConvertCD_Returns400()
+        {
+            Assert.That(_converter.Convert("CD"), Is.EqualTo(400));
+        }
+
+        [Test]
+        public void Converter_ConvertD_Returns500()
+        {
+            Assert.That(_converter.Convert("D"), Is.EqualTo(500));
+        }
+
+        [Test]
+        public void Converter_ConvertCM_Returns900()
+        {
+            Assert.That(_converter.Convert("CM"), Is.EqualTo(900));
+        }
+
+        [Test]
+        public void Converter_ConvertM_Returns1000()
+        {
+            Assert.That(_converter.Convert("M"), Is.EqualTo(1000));
+        }
+
+        [Test]
+        public void Converter_ConvertMCMLXXXVII_Returns1987()
+        {
+            Assert.That(_converter.Convert("MCMLXXXVII "), Is.EqualTo(1987));
+        }
     }
 }
