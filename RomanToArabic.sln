@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanToArabic", "RomanToArabic\RomanToArabic.csproj", "{E73F4721-C899-42F7-8D69-CA1AA38BBFCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanToArabicTest", "RomanToArabicTest\RomanToArabicTest.csproj", "{C23C3E48-15E5-4C86-97AB-B8F974B14065}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanToArabicTest", "RomanToArabicTest\RomanToArabicTest.csproj", "{BBD681E3-5448-44F4-87B1-7A53CC9BFD0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{E73F4721-C899-42F7-8D69-CA1AA38BBFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E73F4721-C899-42F7-8D69-CA1AA38BBFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E73F4721-C899-42F7-8D69-CA1AA38BBFCF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C23C3E48-15E5-4C86-97AB-B8F974B14065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C23C3E48-15E5-4C86-97AB-B8F974B14065}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C23C3E48-15E5-4C86-97AB-B8F974B14065}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C23C3E48-15E5-4C86-97AB-B8F974B14065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBD681E3-5448-44F4-87B1-7A53CC9BFD0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD681E3-5448-44F4-87B1-7A53CC9BFD0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD681E3-5448-44F4-87B1-7A53CC9BFD0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD681E3-5448-44F4-87B1-7A53CC9BFD0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
