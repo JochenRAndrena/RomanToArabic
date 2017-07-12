@@ -12,11 +12,11 @@ namespace RomanToArabicTest
         [SetUp]
         public void Setup()
         {
-            var possibleTokens = new List<string> {"I", "IV"};
+            var possibleTokens = new List<string> {"I", "IV", "V"};
             _tokenizer = new Tokenizer(possibleTokens);
         }
         [Test]
-        public void TokenizerWithPossibleTokensIAndIV_TokenizeI_ReturnsListContainingOneElementI()
+        public void TokenizerWithPossibleTokensIAndIVAndV_TokenizeI_ReturnsListContainingOneElementI()
         {
             var tokens = _tokenizer.Tokenize("I");
             Assert.That(tokens.Count, Is.EqualTo(1));
@@ -24,7 +24,7 @@ namespace RomanToArabicTest
         }
 
         [Test]
-        public void TokenizerWithPossibleTokensIAndIV_TokenizeII_ReturnsListContainingTwoElementsIAndI()
+        public void TokenizerWithPossibleTokensIAndIVAndV_TokenizeII_ReturnsListContainingTwoElementsIAndI()
         {
             var tokens = _tokenizer.Tokenize("II");
             Assert.That(tokens.Count, Is.EqualTo(2));
@@ -32,7 +32,7 @@ namespace RomanToArabicTest
         }
 
         [Test]
-        public void TokenizerWithPossibleTokensIAndIV_TokenizeIV_ReturnsListContainingOneElementIV()
+        public void TokenizerWithPossibleTokensIAndIVAndV_TokenizeIV_ReturnsListContainingOneElementIV()
         {
             var tokens = _tokenizer.Tokenize("IV");
             Assert.That(tokens.Count, Is.EqualTo(1));

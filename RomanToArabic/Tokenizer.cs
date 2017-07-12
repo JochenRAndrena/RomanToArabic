@@ -29,9 +29,7 @@ namespace RomanToArabic
             if (longestMatchingTokens.Count == 1)
             {
                 var token = longestMatchingTokens.First();
-                var result = Tokenize(s.Substring(token.Length));
-                result.Add(token);
-                return result;
+                return new List<string> {token}.Concat(Tokenize(s.Substring(token.Length))).ToList();
             }
             
             return new List<string>();
