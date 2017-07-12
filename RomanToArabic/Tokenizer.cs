@@ -12,36 +12,47 @@ namespace RomanToArabic
         {
             this._tokens = tokens;
         }
-        
+
 
         public List<string> Tokenize(string s)
         {
-            if (s.Length == 0)
+            try
             {
-                return new List<string>();
+                if (s.Length == 0)
+                {
+                    return new List<string>();
+                }
+                var matchingTokens = ComputeMatchingTokens(s);
+                var longestMatch = ComputeLongestMatchingToken(matchingTokens);
+
+                return new List<string> {longestMatch}.Concat(TokenizeRemainingString(s, longestMatch)).ToList();
             }
-            var possibleTokens = new List<string>();
-            
+            catch (Exception )
+            {
+                throw new ArgumentException("can not tokenize " + s);
+            }
+        }
+
+        private List<string> TokenizeRemainingString(string s, string longestMatchingToken)
+        {
+            return Tokenize(s.Substring(longestMatchingToken.Length));
+        }
+
+        private List<string> ComputeMatchingTokens(string s)
+        {
+            var matchingTokens = new List<string>();
+
             foreach (var token in _tokens)
             {
                 if (s.StartsWith(token))
                 {
-                    possibleTokens.Add(token);
+                    matchingTokens.Add(token);
                 }
             }
-            var longestMatchingTokens = ComputeLongestTokens(possibleTokens);
-
-            if (longestMatchingTokens.Count == 1)
-            {
-                var token = longestMatchingTokens.First();
-                return new List<string> {token}.Concat(Tokenize(s.Substring(token.Length))).ToList();
-            }
-            
-            else 
-                throw new ArgumentException("can not tokenize " + s);
+            return matchingTokens;
         }
 
-        private List<string> ComputeLongestTokens(List<string> tokens)
+        private string ComputeLongestMatchingToken(List<string> tokens)
         {
             var maxLength = 0;
             var longestTokens = new List<string>();
@@ -57,7 +68,7 @@ namespace RomanToArabic
                     longestTokens.Add(token);
                 }
             });
-            return longestTokens;
+            return longestTokens.Single();
         }
     }
 }
