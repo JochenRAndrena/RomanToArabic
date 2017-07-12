@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ConverterTest.cs" />
+    <Compile Include="TokenizerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

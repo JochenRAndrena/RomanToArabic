@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
+using System.Xml;
 
 namespace RomanToArabic
 {
@@ -24,5 +25,6 @@ namespace RomanToArabic
                 return _romanDigits[romanNumber];
             return romanNumber.Length;
         }
+
     }
 }
