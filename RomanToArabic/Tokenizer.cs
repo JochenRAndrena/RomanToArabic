@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace RomanToArabic
@@ -15,6 +16,10 @@ namespace RomanToArabic
 
         public List<string> Tokenize(string s)
         {
+            if (s.Length == 0)
+            {
+                return new List<string>();
+            }
             var possibleTokens = new List<string>();
             
             foreach (var token in _tokens)
@@ -32,7 +37,8 @@ namespace RomanToArabic
                 return new List<string> {token}.Concat(Tokenize(s.Substring(token.Length))).ToList();
             }
             
-            return new List<string>();
+            else 
+                throw new ArgumentException("can not tokenize " + s);
         }
 
         private List<string> ComputeLongestTokens(List<string> tokens)

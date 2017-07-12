@@ -46,5 +46,11 @@ namespace RomanToArabicTest
             Assert.That(tokens.Count, Is.EqualTo(1));
             Assert.That(tokens.Contains("V"));
         }
+
+        [Test]
+        public void Tokenizer_TokenizeInvalidString_Throws()
+        {
+            Assert.That(() => _tokenizer.Tokenize("invalid"), Throws.Exception);
+        }
     }
 }

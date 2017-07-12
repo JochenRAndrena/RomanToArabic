@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Xml;
@@ -25,7 +26,7 @@ namespace RomanToArabic
                 {"CD", 400 },
                 {"D", 500 },
                 {"CM", 900 },
-                {"M", 1000 },
+                {"M", 1000 }
             };
         }
 
@@ -33,11 +34,19 @@ namespace RomanToArabic
         public int Convert(string romanNumber)
         {
             var tokenizer = new Tokenizer(_romanDigits.Keys.ToList());
-            var tokens = tokenizer.Tokenize(romanNumber);
+            try
+            {
+                var tokens = tokenizer.Tokenize(romanNumber.Trim());
+                var arabicNumber = 0;
+                tokens.ForEach(token => arabicNumber += _romanDigits[token]);
+                return arabicNumber;
+            }
+            catch (Exception)
+            {
+                throw new ArgumentException("Can not convert " + romanNumber + " to an arabic number");
+            }
 
-            var arabicNumber = 0;
-            tokens.ForEach(token => arabicNumber+= _romanDigits[token]);
-            return arabicNumber;
+            
         }
 
     }

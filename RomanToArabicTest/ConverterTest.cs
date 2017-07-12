@@ -127,5 +127,11 @@ namespace RomanToArabicTest
         {
             Assert.That(_converter.Convert("MCMLXXXVII "), Is.EqualTo(1987));
         }
+
+        [Test]
+        public void Convert_InvalidNumber_ThrowsException()
+        {
+            Assert.That(() => _converter.Convert("XG"), Throws.Exception);
+        }
     }
 }
