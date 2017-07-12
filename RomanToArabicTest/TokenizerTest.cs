@@ -48,9 +48,9 @@ namespace RomanToArabicTest
         }
 
         [Test]
-        public void Tokenizer_TokenizeInvalidString_Throws()
+        public void TokenizerWithPossibleTokensIAndIVAndV_TokenizeC_Throws()
         {
-            Assert.That(() => _tokenizer.Tokenize("invalid"), Throws.Exception);
+            Assert.That(() => _tokenizer.Tokenize("C"), Throws.Exception);
         }
     }
 }
